@@ -1,0 +1,39 @@
+<style>
+  .ctn {
+  padding-top: 100px ;
+  }
+</style>
+<div class="container ctn">
+  <div class="row">
+    <div class="col-sm-6">
+        <a href="#" class="btn btn-success" routerLink="/"><i class="fa fa-arrow-circle-left"></i>  Back to Dashboard</a>
+        
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <h3><i class="fa fa-plus"></i>  Settings</h3>
+      <hr>
+    </div>
+    <div class="col-sm-12">
+      <form (submit)="mySubmit()">
+      <label class="checkbox-inline">
+        <input type="checkbox" value="" [checked]="settings.isRegisterOpen" (change)="settings.isRegisterOpen=!settings.isRegisterOpen" name="settings.isRegisterOpen">Open Registration
+      </label>
+      &nbsp; &nbsp; &nbsp; &nbsp;
+      <label class="checkbox-inline">
+        <input type="checkbox" value="" [checked]="settings.disableSalary" (change)="settings.disableSalary=!settings.disableSalary" name="settings.disableSalary">Enable Salary
+      </label>
+      &nbsp; &nbsp; &nbsp; &nbsp;
+      <label class="checkbox-inline">
+        <input type="checkbox" value="" [checked]="settings.isSalaryEditable" (change)="settings.isSalaryEditable=!settings.isSalaryEditable" name="settings.isSalaryEditable">Editable Salary
+      </label>
+      <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+    </div>
+  </div>
+
+  
+
+</div>
+

@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-sm-6">
+        <a href="" [routerLink]="['/edit-employee/'+id]" class="btn btn-primary"><i class="fa fa-info-circle"></i>  Edit</a>
+        <button (click)="myDelete()" class="btn btn-danger" >Delete <i class="fa-fa-minus"></i></button>
+      </div>
+  </div>
+  <hr>
+  <div class="container">
+    <h3 [class.text-danger]="hasSalary" [class.text-primary]="!hasSalary" >Salary : {{employee?.salary | currency:"USD":"symbol"}}    
+      <a (click)="showSalaryUpdate=!showSalaryUpdate"> <i class="fa fa-pencil-square-o"></i></a>
+    </h3>
+
+    <form *ngIf="showSalaryUpdate" (submit)="updateSalaryEmployee(id)">
+      <div class="form-group">
+        <input type="text" class="form-control" name="salary" [(ngModel)]="employee.salary">
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+      <hr>
+    </form>
+  </div>
+
+
+
+
+
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">City</th>
+        <th scope="col">Country</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Salary</th>
+        <th scope="col">ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <th>{{employee?.firstName}}</th>
+        <th>{{employee?.lastName}}</th>
+        <th>{{employee?.email}}</th>
+        <th>{{employee?.city}}</th>
+        <th>{{employee?.country}}</th>
+        <th>{{employee?.phone}}</th>
+        <th>{{employee?.salary | currency:"USD":"symbol"}}</th>
+        <th>{{employee?.key}}</th>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+
+  
+  
+  
